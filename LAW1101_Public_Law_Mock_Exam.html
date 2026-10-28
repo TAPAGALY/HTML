@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>LAW 1101 | Public Law Mock Exam</title>
+<style>
+:root { --navy:#11263d; --ink:#14283b; --muted:#5a6b7b; --teal:#0e797c; --accent:#dfac57; --page:#f3f6fa; --border:#dbe4ec; --white:#fff; --shadow:0 14px 35px rgba(18,42,66,.08); }
+* {box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--page);color:var(--ink);font-family:Tahoma,'Noto Sans Thai',system-ui,sans-serif;line-height:1.85}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+.hero{background:linear-gradient(120deg,#101f34 0%,#193a57 72%,#1a555e 100%);color:#fff;padding:44px 22px 90px}
+.container{max-width:960px;margin:0 auto}
+.eyebrow{color:#f0cd8a;font-weight:700;letter-spacing:.12em;font-size:12px}
+h1{font-size:clamp(30px,5vw,46px);letter-spacing:-.035em;line-height:1.3;margin:8px 0 10px}
+.subtitle{color:#d4e1ed;font-size:15px;margin:0;max-width:700px}
+.hero-pills{display:flex;gap:10px;flex-wrap:wrap;margin-top:23px}
+.pill{display:inline-flex;align-items:center;border:1px solid #60788a;border-radius:999px;color:#f1f6fc;padding:3px 13px;font-size:13px;background:#ffffff0d}
+.main{max-width:960px;padding:0 22px 45px;margin:-55px auto 0;position:relative}
+.panel{background:#fff;box-shadow:var(--shadow);border:1px solid var(--border);border-radius:18px;margin-bottom:19px;overflow:hidden}
+.controls{padding:23px 27px}
+.controls-grid{display:flex;align-items:end;gap:15px;flex-wrap:wrap}
+.field{display:flex;flex-direction:column;gap:6px;flex:1;min-width:200px}
+.label{font-size:13px;color:var(--muted);font-weight:700}
+.input{width:100%;border:1px solid #c9d5df;border-radius:9px;padding:9px 13px;min-height:43px;background:white;color:var(--ink)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.btn{border:1px solid #bdccd8;background:white;color:var(--ink);border-radius:9px;padding:8px 14px;font-size:14px;font-weight:700;min-height:41px;transition:background .15s}
+.btn:hover{background:#edf3f8}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:white}
+.btn.primary:hover{background:#0b6266}
+.btn.danger{color:#a5292e;border-color:#edc6c7}
+.btn.danger:hover{background:#fff0f0}
+.status-area{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-top:19px;color:var(--muted);font-size:13px}
+.progress-track{height:7px;border-radius:20px;background:#e7eef4;overflow:hidden;margin-top:8px}
+#progressBar{height:100%;width:0;background:var(--teal);transition:width .2s}
+.timing{display:flex;gap:8px;align-items:end;flex-wrap:wrap;margin-top:14px}
+.timing label{font-size:13px;font-weight:700;color:var(--muted)}
+.timer-readout{background:#eef4f7;border-radius:9px;padding:5px 12px;font-variant-numeric:tabular-nums;font-size:17px;font-weight:700;min-width:98px;text-align:center}
+.timer-readout.due{background:#fff0e9;color:#a53d20}
+.question-head{padding:19px 26px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.qtag{color:#0f777a;font-weight:800;font-size:14px}
+.score{background:#eff5f6;color:#316468;padding:3px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.qcontent{padding:22px 26px 26px}
+.question{font-size:17px;line-height:2.05;font-weight:650;margin:0 0 18px}
+.answer-label{display:block;color:var(--muted);font-size:13px;font-weight:700;margin-bottom:7px}
+textarea{display:block;width:100%;min-height:224px;resize:vertical;border:1px solid #cbd8e2;border-radius:12px;padding:15px 16px;color:var(--ink);background:#fcfdfd;line-height:1.95;font-size:15px}
+textarea:focus,.input:focus{outline:3px solid #a3d9d9;border-color:var(--teal)}
+.meta{margin-top:9px;display:flex;justify-content:space-between;gap:8px;align-items:center;color:#6e7f8c;font-size:12px}
+.small-help{font-size:13px;color:var(--muted);line-height:1.85}
+.footer{text-align:center;margin:35px 0;color:#607180;font-size:12px}
+.notice{border-left:3px solid var(--teal);background:#f0f8f8;padding:9px 13px;border-radius:0 8px 8px 0;margin:12px 0 0;font-size:13px;color:#395861}
+.print-answer{display:none;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:600px){.hero{padding-top:32px}.main{padding:0 13px 34px}.controls,.qcontent{padding:17px}.question-head{padding:15px 17px}.question{font-size:16px}.hero-pills{gap:6px}.pill{font-size:12px}.btn{padding:8px 10px}textarea{min-height:250px}}
+@media print{body{background:white;color:black;font-size:12pt}.hero{padding:0 0 8px;background:white;color:black}.hero .subtitle,.hero-pills{color:black}.main{max-width:none;margin:0;padding:0}.controls{display:none}.panel{box-shadow:none;border:0;border-radius:0;margin:0 0 16px;break-inside:avoid}.question-head,.qcontent{padding:5px 0}.question{font-size:12pt}.score{background:none;color:black}.answer-label,textarea,.meta,.footer{display:none!important}.print-answer{display:block!important;border-top:1px solid #aaa;padding:8px 0;min-height:50px;font-size:11pt}.panel{page-break-inside:avoid}h1{font-size:24pt}.eyebrow{color:black}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">LAW 1101 · PUBLIC LAW</div>
+    <h1>ข้อสอบจำลองกฎหมายมหาชน</h1>
+    <p class="subtitle">ฝึกตอบข้อสอบอัตนัยตามแนวคำถามตัวอย่างของอาจารย์ และเนื้อหาสไลด์ที่ได้รับ · ไม่มีเฉลยหรือคำใบ้</p>
+    <div class="hero-pills"><span class="pill">4 ข้อ</span><span class="pill">60 คะแนน</span><span class="pill">ข้อละ 15 คะแนน (สมมติ)</span><span class="pill">ไม่มีโจทย์สถานการณ์</span></div>
+  </div>
+</header>
+<main class="main">
+ <section class="panel controls" aria-label="เครื่องมือทำข้อสอบ">
+   <div class="controls-grid">
+     <div class="field"><label class="label" for="student">ชื่อผู้ทำข้อสอบ (ไม่บังคับ)</label><input id="student" class="input" placeholder="ชื่อ / รหัสนักศึกษา"></div>
+     <div class="field"><label class="label" for="session">ชุดข้อสอบ</label><input id="session" class="input" value="Full Mock · ชุดที่ 1" readonly></div>
+   </div>
+   <div class="timing">
+     <label for="duration">จับเวลาฝึก (ไม่บังคับ)</label>
+     <select class="input" id="duration" style="width:auto;min-width:125px"><option value="0">ไม่จับเวลา</option><option value="60">60 นาที</option><option value="90">90 นาที</option><option value="120">120 นาที</option></select>
+     <button class="btn" id="timerToggle" type="button">เริ่มจับเวลา</button>
+     <div class="timer-readout" id="timer" aria-live="polite">--:--</div>
+   </div>
+   <div class="toolbar">
+     <button class="btn primary" id="download" type="button">⬇ บันทึกคำตอบเป็น .txt</button>
+     <button class="btn" id="copy" type="button">คัดลอกคำตอบทั้งหมด</button>
+     <button class="btn" id="print" type="button">พิมพ์ / บันทึกเป็น PDF</button>
+     <button class="btn danger" id="reset" type="button">ล้างคำตอบ</button>
+   </div>
+   <div class="status-area"><span id="progressText">ตอบแล้ว 0 จาก 4 ข้อ</span><span id="saveStatus" aria-live="polite">บันทึกอัตโนมัติเมื่อพิมพ์ (เฉพาะอุปกรณ์นี้)</span></div>
+   <div class="progress-track"><div id="progressBar"></div></div>
+   <p class="notice">เขียนคำตอบด้วยภาษาของตัวเองให้ครบประเด็น การพิมพ์จะพยายามบันทึกไว้ในเบราว์เซอร์ แต่แนะนำให้ดาวน์โหลดไฟล์ .txt เป็นระยะ เพื่อป้องกันข้อมูลสูญหาย</p>
+ </section>
+ <section class="panel" id="q1">
+   <div class="question-head"><span class="qtag">ข้อที่ 1</span><span class="score">15 คะแนน</span></div>
+   <div class="qcontent">
+    <p class="question">จงอธิบายความหมาย ลักษณะสำคัญ และขอบเขตของ “กฎหมายมหาชน” มาให้เข้าใจ และอธิบายว่าเพราะเหตุใดภายใต้หลักกฎหมายมหาชน ฝ่ายปกครองจึงสามารถใช้อำนาจบังคับฝ่ายเดียวให้เกิดผลต่อเอกชนโดยไม่ต้องได้รับความยินยอมก่อน ทั้งนี้ การใช้อำนาจดังกล่าวมีหลักการหรือข้อจำกัดที่สำคัญอย่างไรบ้าง</p>
+    <label class="answer-label" for="a1">พื้นที่เขียนคำตอบ</label><textarea id="a1" data-q="1" placeholder="เริ่มเขียนคำตอบข้อ 1 ..." spellcheck="false"></textarea>
+    <div class="print-answer" id="p1"></div><div class="meta"><span>คำตอบข้อ 1</span><span id="c1">0 ตัวอักษร</span></div>
+   </div>
+ </section>
+ <section class="panel" id="q2">
+   <div class="question-head"><span class="qtag">ข้อที่ 2</span><span class="score">15 คะแนน</span></div>
+   <div class="qcontent">
+    <p class="question">จงอธิบายความหมาย ลักษณะ และความสำคัญของ “หลักประโยชน์สาธารณะ” ในบริบททางกฎหมายมหาชนมาโดยละเอียด และอธิบายว่าการใช้อำนาจของรัฐเพื่อประโยชน์ส่วนรวมจะต้องคำนึงถึงสิทธิและประโยชน์ของเอกชนอย่างไร โดยอธิบายหลักความได้สัดส่วนทั้งสามประการพร้อมยกตัวอย่างประกอบ</p>
+    <label class="answer-label" for="a2">พื้นที่เขียนคำตอบ</label><textarea id="a2" data-q="2" placeholder="เริ่มเขียนคำตอบข้อ 2 ..." spellcheck="false"></textarea>
+    <div class="print-answer" id="p2"></div><div class="meta"><span>คำตอบข้อ 2</span><span id="c2">0 ตัวอักษร</span></div>
+   </div>
+ </section>
+ <section class="panel" id="q3">
+   <div class="question-head"><span class="qtag">ข้อที่ 3</span><span class="score">15 คะแนน</span></div>
+   <div class="qcontent">
+    <p class="question">จงอธิบายว่ากฎหมายมหาชนมีลักษณะทางกฎหมายแตกต่างจากกฎหมายเอกชนอย่างไร โดยพิจารณาความแตกต่างตามหลักเกณฑ์ทั้งหกด้านที่เรียนมา และอธิบายความสำคัญของ “นิติวิธีทางกฎหมายมหาชน” ในการพิจารณาปัญหาทางกฎหมายมหาชนประกอบด้วย</p>
+    <label class="answer-label" for="a3">พื้นที่เขียนคำตอบ</label><textarea id="a3" data-q="3" placeholder="เริ่มเขียนคำตอบข้อ 3 ..." spellcheck="false"></textarea>
+    <div class="print-answer" id="p3"></div><div class="meta"><span>คำตอบข้อ 3</span><span id="c3">0 ตัวอักษร</span></div>
+   </div>
+ </section>
+ <section class="panel" id="q4">
+   <div class="question-head"><span class="qtag">ข้อที่ 4</span><span class="score">15 คะแนน</span></div>
+   <div class="qcontent">
+    <p class="question">จงอธิบายลักษณะสำคัญของกฎหมายมหาชนในฐานะกฎหมายที่มีวัตถุประสงค์ควบคุมการใช้อำนาจรัฐ และอธิบายวัตถุประสงค์ของการควบคุมฝ่ายปกครองว่ามีอะไรบ้าง พร้อมเปรียบเทียบความแตกต่างระหว่างการควบคุมแบบป้องกันกับการควบคุมแบบแก้ไข โดยระบุกลไกหรือองค์กรที่เกี่ยวข้องอย่างเหมาะสม</p>
+    <label class="answer-label" for="a4">พื้นที่เขียนคำตอบ</label><textarea id="a4" data-q="4" placeholder="เริ่มเขียนคำตอบข้อ 4 ..." spellcheck="false"></textarea>
+    <div class="print-answer" id="p4"></div><div class="meta"><span>คำตอบข้อ 4</span><span id="c4">0 ตัวอักษร</span></div>
+   </div>
+ </section>
+ <p class="footer">LAW 1101 · Mock Exam 1 · ฝึกด้วยตนเองจากสไลด์และภาพคำถามตัวอย่าง · ไม่มีการตรวจคำตอบอัตโนมัติ</p>
+</main>
+<script>
+(function(){
+  'use strict';
+  const key='LAW1101_MOCK_ESSAY_2026_V1';
+  const $=id=>document.getElementById(id);
+  const answers=[1,2,3,4];
+  let saveTimer=null;
+  function store(){
+    const data={name:$('student').value,answers:answers.map(n=>$('a'+n).value)};
+    try{localStorage.setItem(key,JSON.stringify(data)); $('saveStatus').textContent='บันทึกอัตโนมัติแล้วในเบราว์เซอร์';}
+    catch(err){$('saveStatus').textContent='เบราว์เซอร์ไม่อนุญาตให้บันทึกอัตโนมัติ — กรุณาดาวน์โหลด .txt';}
+  }
+  function progress(){
+    let count=0;
+    for(const n of answers){const val=$('a'+n).value.trim(); $('c'+n).textContent=val.length.toLocaleString('th-TH')+' ตัวอักษร'; $('p'+n).textContent=val||'(ยังไม่ได้เขียนคำตอบ)'; if(val)count++;}
+    $('progressText').textContent='ตอบแล้ว '+count+' จาก 4 ข้อ'; $('progressBar').style.width=(count/4*100)+'%';
+  }
+  function scheduleSave(){progress();$('saveStatus').textContent='กำลังบันทึก…';clearTimeout(saveTimer);saveTimer=setTimeout(store,300);}
+  try{let data=JSON.parse(localStorage.getItem(key)||'null');if(data){$('student').value=data.name||'';answers.forEach((n,i)=>$('a'+n).value=data.answers?.[i]||'');}}
+  catch(err){$('saveStatus').textContent='ไม่สามารถอ่านข้อมูลที่เคยบันทึกได้';}
+  progress();
+  $('student').addEventListener('input',scheduleSave);
+  answers.forEach(n=>$('a'+n).addEventListener('input',scheduleSave));
+  function textExport(){
+    const lines=['LAW 1101 — ข้อสอบจำลองกฎหมายมหาชน','ชุดที่ 1 | 4 ข้อ | 60 คะแนน','ผู้ทำ: '+($('student').value.trim()||'ไม่ระบุ'),'วันที่ส่งออก: '+new Date().toLocaleString('th-TH'),'', '===================================================='];
+    answers.forEach(n=>{lines.push('', 'ข้อ '+n+' (15 คะแนน)',document.querySelector('#q'+n+' .question').textContent.trim(),'','คำตอบ:', $('a'+n).value.trim()||'(ยังไม่ได้ตอบ)', '', '----------------------------------------------------');});
+    return lines.join('\n');
+  }
+  $('download').addEventListener('click',()=>{
+    const content=textExport();const blob=new Blob(['\ufeff',content],{type:'text/plain;charset=utf-8'});
+    const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='LAW1101_Mock_Answers.txt';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+    $('saveStatus').textContent='สร้างไฟล์คำตอบ .txt แล้ว';
+  });
+  $('copy').addEventListener('click',async()=>{
+    const txt=textExport(); try{await navigator.clipboard.writeText(txt);$('saveStatus').textContent='คัดลอกคำตอบทั้งหมดแล้ว';}
+    catch(err){const holder=document.createElement('textarea');holder.value=txt;holder.style.position='fixed';holder.style.left='-9999px';document.body.appendChild(holder);holder.select();const ok=document.execCommand('copy');holder.remove();$('saveStatus').textContent=ok?'คัดลอกคำตอบทั้งหมดแล้ว':'คัดลอกไม่สำเร็จ — ใช้ปุ่มดาวน์โหลด .txt';}
+  });
+  $('print').addEventListener('click',()=>{progress();window.print();});
+  $('reset').addEventListener('click',()=>{
+    if(!confirm('ต้องการลบคำตอบทั้ง 4 ข้อและชื่อผู้ทำจริงหรือไม่? แนะนำให้ดาวน์โหลด .txt ก่อนลบ'))return;
+    answers.forEach(n=>$('a'+n).value='');$('student').value='';clearTimeout(saveTimer);store();progress();
+  });
+  let remaining=0,interval=null,paused=false,finishAt=null;
+  function renderTimer(){
+    const el=$('timer');if(remaining<=0){el.textContent='00:00';return;}
+    const m=Math.floor(remaining/60),s=remaining%60;el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+  $('duration').addEventListener('change',()=>{if(interval){clearInterval(interval);interval=null;}remaining=Number($('duration').value)*60;paused=false;$('timerToggle').textContent='เริ่มจับเวลา';$('timer').classList.remove('due');$('timer').textContent=remaining?`${String(Math.floor(remaining/60)).padStart(2,'0')}:00`:'--:--';});
+  $('timerToggle').addEventListener('click',()=>{
+    const mins=Number($('duration').value);
+    if(!mins){$('saveStatus').textContent='เลือก 60, 90 หรือ 120 นาทีก่อนเริ่มจับเวลา';return;}
+    if(interval){clearInterval(interval);interval=null;remaining=Math.max(0,Math.ceil((finishAt-Date.now())/1000));paused=true;$('timerToggle').textContent='ทำต่อ';return;}
+    if(!remaining)remaining=mins*60;
+    finishAt=Date.now()+remaining*1000;
+    interval=setInterval(()=>{
+      remaining=Math.max(0,Math.ceil((finishAt-Date.now())/1000));renderTimer();
+      if(remaining===0){clearInterval(interval);interval=null;$('timerToggle').textContent='เริ่มใหม่';$('timer').classList.add('due');alert('หมดเวลาฝึกที่กำหนดแล้ว คุณยังสามารถเขียนต่อหรือบันทึกคำตอบได้');}
+    },500);
+    paused=false;$('timerToggle').textContent='พักเวลา';$('timer').classList.remove('due');renderTimer();
+  });
+})();
+</script>
+</body>
+</html>
